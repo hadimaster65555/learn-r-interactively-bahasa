@@ -1,0 +1,27 @@
+---
+title: "Pemrograman Dasar R"
+author: "indo-r"
+date: "17 Februari 2019"
+output: ioslides_presentation
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Contoh slide 1
+
+```{r aritmatika-1, exercise=TRUE}
+# Penjumlahan
+1 + 2
+```
+
+## Contoh slide 2
+
+```{r aritmatika-2, exercise=TRUE}
+# Penjumlahan
+1 + 2
+```
+

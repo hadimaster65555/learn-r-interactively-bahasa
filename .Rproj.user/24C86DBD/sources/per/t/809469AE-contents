@@ -1,0 +1,141 @@
+---
+title: "Tutorial Dasar Pemrograman R"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Petunjuk Penggunaan Tutorial Interaktif
+
+Selamat datang di tutorial interaktif pemrograman R. Program ini dibuat untuk membantu anda mempelajari bahasa pemrograman R secara interaktif tanpa mengunduh R terlebih dahulu.
+
+Jika ingin menjalankan kode di dalam *code chunk*, cukup dengan mengklik tombol **Run Code** atau tekan kombinasi **ctrl + Enter**:
+
+```{r petunjuk-1, exercise=TRUE}
+iris
+```
+
+Jika ingin membersihkan *output* pada *code chunk*, cukup dengan mengklik tombol **start over**:
+
+```{r petunjuk-3, exercise=TRUE, exercise.eval=TRUE}
+1+2
+```
+
+Sekian petunjuk penggunaan tutorial interaktif ini dan selamat bersenang-senang dengan R!
+
+## Aritmatika dasar 
+
+Berikut dibawah ini adalah contoh aritmatika dasar pada R:
+
+```{r aritmatika-1, exercise=TRUE}
+# Penjumlahan
+1 + 2
+```
+
+```{r aritmatika-2, exercise=TRUE}
+#Pengurangan
+5 - 10
+```
+
+```{r aritmatika-3, exercise=TRUE}
+# Perkalian
+10 * 20
+```
+
+```{r aritmatika-4, exercise=TRUE}
+# Pembagian
+100/20
+```
+
+
+## Variabel
+
+Kita dapat memasukkan nilai kedalam variabel dengan menggunakan operator *assignment* ```<-```, ``` = ``` ataupun ```->``` seperti berikut:
+
+**Contoh penggunaan assignment ``` <- ```**
+
+```{r variable-1, exercise=TRUE}
+variabel_1 <- 10
+print(variabel_1)
+```
+
+**Contoh penggunaan assignment ``` = ```**
+
+```{r variable-2, exercise=TRUE}
+variabel_2 = 100
+print(variabel_2)
+```
+
+**Contoh penggunaan assignment ``` -> ```**
+
+```{r variable-3, exercise=TRUE}
+79 -> variabel_3
+print(variabel_3)
+```
+
+
+Pada praktiknya, banyak *programmer R* menggunakan operator *assignment* ```<-```, mengikuti salah satu *style guide* yang umum digunakan, misalnya *style guide* dari google berikut: [Google's R Style Guide
+](https://google.github.io/styleguide/Rguide.xml#assignment)
+
+## Tipe dan Struktur Data di R
+
+R adalah bahasa pemrograman yang dinamis, artinya R akan menerjemahkan setiap *input* yang diberikan oleh pengguna tanpa harus dideklarasikan terlebih dahulu, dan memberikan *output* yang sesuai dengan tipe datanya.
+
+Ada beberapa tipe data di R, namun tergantung dari sudut pandang mana kita melihat objek tersebut. Perhatikan contoh berikut:
+
+```{r tipe-data, exercise=TRUE}
+# Menggunakan typeof()
+typeof(1)
+
+# Menggunakan class()
+class(1)
+```
+
+Dua fungsi tersebut memberikan output yang berbeda, hal ini dikarenakan dengan menggunakan ```typeof()```, R akan menilai tipe data objek tersebut berdasarkan "R", sedangkan menggunakan ```class```, R akan menilai tipe data objek tersebut berdasarkan sudut pandang *Object-Oriented Programming (OOP)*.
+
+Tipe data berdasarkan R:
+
+- ```double```
+- ```character```
+- ```list```
+- ```integer```
+
+*Here's an exercise where the chunk is pre-evaulated via the `exercise.eval` option (so the user can see the default output we'd like them to customize). We also add a "hint" to the correct solution via the chunk immediate below labeled `print-limit-hint`.*
+
+Modify the following code to limit the number of rows printed to 5:
+
+```{r print-limit, exercise=TRUE, exercise.eval=TRUE}
+mtcars
+```
+
+```{r print-limit-hint}
+head(mtcars)
+```
+
+### Quiz
+
+*You can include any number of single or multiple choice questions as a quiz. Use the `question` function to define a question and the `quiz` function for grouping multiple questions together.*
+
+Some questions to verify that you understand the purposes of various base and recommended R packages:
+
+```{r quiz}
+quiz(
+  question("Which package contains functions for installing other R packages?",
+    answer("base"),
+    answer("tools"),
+    answer("utils", correct = TRUE),
+    answer("codetools")
+  ),
+  question("Which of the R packages listed below are used to create plots?",
+    answer("lattice", correct = TRUE),
+    answer("tools"),
+    answer("stats"),
+    answer("grid", correct = TRUE)
+  )
+)
+```
+
